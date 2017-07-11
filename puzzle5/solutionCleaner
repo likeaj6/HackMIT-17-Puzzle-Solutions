@@ -1,0 +1,14 @@
+import json
+
+category = []
+
+with open('batch1solution.json') as data_file:
+    data = json.load(data_file)
+    with open('cleanedbatch1solution.json', 'w') as outfile:
+        for obj in data:
+            if obj['solution'] == 'wrong':
+                break
+            else:
+                category.append(obj)
+        print(category)
+        json.dump(category, outfile)
